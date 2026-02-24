@@ -26,7 +26,6 @@ export async function remarkDirectiveUsingExample(
     .use(remarkRelativeCodePathsAdjustment)
     .process(await vFile.read(filePath));
 };
-
 ```
 
 Source files:
@@ -73,7 +72,6 @@ import remarkDirective from 'remark-directive';
 import { remarkInclude } from '@it-service-npm/remark-include';
 import type { VFile } from 'vfile';
 ```
-
 ````
 
 Remark output:
@@ -118,5 +116,4 @@ import remarkDirective from 'remark-directive';
 import { remarkInclude } from '@it-service-npm/remark-include';
 import type { VFile } from 'vfile';
 ```
-
 ````
