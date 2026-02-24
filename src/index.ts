@@ -92,9 +92,9 @@ export function remarkRelativeCodePathsAdjustment(
             if (!path.isAbsolute(normalizedFilePath)) {
               const rebasedFilePath = convertPath(
                 path.relative(
-                  path.resolve(
+                  path.dirname(path.resolve(
                     filePathChanges.destinationPath ?? './'
-                  ),
+                  )),
                   path.resolve(
                     path.dirname(filePathChanges.sourcePath ?? file.path),
                     normalizedFilePath

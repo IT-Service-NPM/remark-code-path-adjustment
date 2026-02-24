@@ -1,9 +1,7 @@
-# Updating relative paths for code
+# Updating relative paths for code without `sourcePath`
 
-When `processor.data().filePathChanges` is set,
-this plugin adjusts all relative paths
-for code
-to ensure they are accurate.
+When `processor.data().filePathChanges.sourcePath` does not set,
+`file.path` used.
 
 ```typescript file=./example.ts
 import { remark } from 'remark';
@@ -19,7 +17,6 @@ export async function remarkDirectiveUsingExample(
   return remark()
     .data({
       filePathChanges: {
-        sourcePath: './fixtures/subfolder1/included.md',
         destinationPath: './fixtures/output.md'
       }
     })

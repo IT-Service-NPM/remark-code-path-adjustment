@@ -11,7 +11,6 @@ export async function remarkDirectiveUsingExample(
   return remark()
     .data({
       filePathChanges: {
-        sourcePath: './fixtures/subfolder1/included.md',
         destinationPath: './fixtures/output.md'
       }
     })
