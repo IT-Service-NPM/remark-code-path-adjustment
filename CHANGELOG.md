@@ -13,6 +13,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/IT-Service-NPM/remark-code-path-adjustment/compare/v1.0.0...v1.0.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* fix relative path calculation ([5f09dce](https://github.com/IT-Service-NPM/remark-code-path-adjustment/commit/5f09dcea84ea4fc413c34eee11104582350dd24a))
+
 # 1.0.0 (2026-02-24)
 
 
