@@ -1,5 +1,27 @@
 <!-- markdownlint-configure-file
 {
+  'default': true,
+  'line-length': false,
+  'no-duplicate-heading': false,
+  'no-multiple-blanks': false,
+  'heading-increment': false,
+  'single-title': false
+}
+-->
+# 📓 Changelog
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.0.2](https://github.com/IT-Service-NPM/remark-code-path-adjustment/compare/v1.0.1...v1.0.2) (2026-03-10)
+
+
+### Bug Fixes
+
+* optimize for pnpm ([5fbb0ee](https://github.com/IT-Service-NPM/remark-code-path-adjustment/commit/5fbb0ee03bbbc81d1fdae99c508fca20c360f59d))
+
+<!-- markdownlint-configure-file
+{
   "default": true,
   "line-length": false,
   "no-duplicate-heading": false,

@@ -1,7 +1,7 @@
 {
 	"name": "@it-service-npm/remark-code-path-adjustment",
 	"type": "module",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "The Remark plugin helps to adjust code meta `file`, ensuring paths remain accurate even after file relocations or inclusions.",
 	"keywords": [
 		"markdown",
