@@ -21,6 +21,7 @@
 		"Colorspace",
 		"commitlint",
 		"conventionalcommits",
+		"cycjimmy",
 		"davelosert",
 		"dependabot",
 		"deps",
@@ -50,6 +51,7 @@
 		"rknj",
 		"sergey",
 		"sonarjs",
+		"stdlib",
 		"stefanzweifel",
 		"streamx",
 		"szum",
@@ -59,7 +61,6 @@
 		"tssert",
 		"tsup",
 		"typecheck",
-		"vitest",
 		"wagoid",
 		"winget",
 		"wjervis"

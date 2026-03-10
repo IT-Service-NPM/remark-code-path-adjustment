@@ -4,7 +4,6 @@ import ESLintJs from '@eslint/js';
 import ESLintPluginN from 'eslint-plugin-n';
 import ESLintPluginTSDoc from 'eslint-plugin-tsdoc';
 import ESLintPluginTypescript from 'typescript-eslint';
-import ESLintPluginVitest from '@vitest/eslint-plugin';
 import ESLintPluginPrettier from 'eslint-plugin-prettier';
 import ESLintPluginUnicorn from 'eslint-plugin-unicorn';
 import ESLintConfigPrettier from 'eslint-config-prettier';
@@ -99,22 +98,15 @@ export default defineConfig([
     files: ['test/**/*.test.ts'],
     plugins: {
       n: ESLintPluginN,
-      prettier: ESLintPluginPrettier,
-      vitest: ESLintPluginVitest
+      prettier: ESLintPluginPrettier
     },
     rules: {
-      // ...ESLintPluginVitest.configs.all.rules,
-      ...ESLintPluginVitest.configs.recommended.rules,
       'max-statements': 'off'
     },
     settings: {
-      vitest: {
-        typecheck: true
-      }
     },
     languageOptions: {
       globals: {
-        ...ESLintPluginVitest.environments.env.globals,
       },
     }
   },

@@ -1,29 +1,30 @@
+import { suite, test } from 'node:test';
 import path from 'node:path';
 import { remarkDirectiveUsingExample } from './example.ts';
 
-const testSourceFilesPath: string = path.join(__dirname, 'fixtures');
+await suite('remark-code-path-adjustment', async () => {
 
-describe('remark-code-path-adjustment', () => {
-
-  it('update relative code path',
-    async () => {
+  await test('update relative code path',
+    async (t) => {
       const _cwd = process.cwd();
       try {
-        process.chdir(__dirname);
+        process.chdir(import.meta.dirname);
 
         const outputFile = await remarkDirectiveUsingExample(
-          path.join(testSourceFilesPath,
+          path.join(
+            import.meta.dirname, 'fixtures',
             'subfolder1', 'included.md'
           )
         );
-
-        await expect(String(outputFile))
-          .toMatchFileSnapshot(path.join(testSourceFilesPath, 'output.md'));
+        t.assert.fileSnapshot(
+          String(outputFile),
+          path.resolve(import.meta.dirname, 'fixtures', 'output.md'),
+          { serializers: [(data: string) => data] }
+        );
 
       } finally {
         process.chdir(_cwd);
       };
-
     }
   );
 

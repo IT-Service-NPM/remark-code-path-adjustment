@@ -164,5 +164,19 @@
 		"Message body",
 		"",
 		"Message footer"
+	],
+	"nodejs-testing.extensions": [
+		{
+			"extensions": [
+				"ts"
+			],
+			"parameters": [
+				"--import",
+				"tsx",
+				"--experimental-transform-types",
+				"--experimental-test-module-mocks",
+				"--experimental-test-coverage"
+			]
+		}
 	]
 }
