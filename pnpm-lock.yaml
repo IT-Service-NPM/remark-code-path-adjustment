@@ -23,7 +23,7 @@ importers:
         version: 20.4.3(@types/node@25.4.0)(typescript@5.9.3)
       '@commitlint/config-angular':
         specifier: ^20.4.3
-        version: 20.4.3
+        version: 20.5.0
       '@commitlint/config-conventional':
         specifier: ^20.4.3
         version: 20.4.3
@@ -215,8 +215,8 @@ packages:
     resolution: {integrity: sha512-6HAMnXyUl3EUBgECjvfLzlghbkMfZx28YBPDry3pPWR0+xpzqSbUY19VIkmdetqYKeawFViudvkqD4VH93gKKg==}
     engines: {node: '>=v18'}
 
-  '@commitlint/config-angular@20.4.3':
-    resolution: {integrity: sha512-WawaRHilu/5ezf1YicqpQcWNzBY+Yn/+plHl2ZTN+9sdItrZSmC1oVeg4tSKeJPLFky2aFBp6rhs1y65uu83gA==}
+  '@commitlint/config-angular@20.5.0':
+    resolution: {integrity: sha512-AZ8foxHb8VBCpZywnIFxpXgrK6VMizZ957vlz8UEyaMZEzvP0F+RtQmTijHnVPaPVk/scS6EDp0/1sy1UszXoQ==}
     engines: {node: '>=v18'}
 
   '@commitlint/config-conventional@20.4.3':
@@ -3700,7 +3700,7 @@ snapshots:
 
   '@commitlint/config-angular-type-enum@20.0.0': {}
 
-  '@commitlint/config-angular@20.4.3':
+  '@commitlint/config-angular@20.5.0':
     dependencies:
       '@commitlint/config-angular-type-enum': 20.0.0
 
