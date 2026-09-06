@@ -1,10 +1,9 @@
 import { type UserConfig, RuleConfigSeverity } from '@commitlint/types';
 
-// eslint-disable-next-line max-len
 // https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/config-conventional
 // https://commitlint.js.org/reference/configuration.html
 
-const Configuration: UserConfig = {
+const Config: UserConfig = {
 
   extends: ['@commitlint/config-conventional'],
   rules: {
@@ -26,4 +25,4 @@ const Configuration: UserConfig = {
   ],
 };
 
-export default Configuration;
+export default Config;

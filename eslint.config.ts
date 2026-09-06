@@ -1,29 +1,35 @@
 import { defineConfig } from 'eslint/config';
-import { ESLint } from 'eslint';
 import ESLintJs from '@eslint/js';
 import ESLintPluginN from 'eslint-plugin-n';
 import ESLintPluginTSDoc from 'eslint-plugin-tsdoc';
 import ESLintPluginTypescript from 'typescript-eslint';
+import ESLintPluginStylistic from '@stylistic/eslint-plugin';
 import ESLintPluginPrettier from 'eslint-plugin-prettier';
 import ESLintPluginUnicorn from 'eslint-plugin-unicorn';
 import ESLintConfigPrettier from 'eslint-config-prettier';
 import ESLintPluginSonarJs from 'eslint-plugin-sonarjs';
+import * as ESLintPluginDepend from 'eslint-plugin-depend';
 
 export default defineConfig([
   {
     extends: [
       ESLintPluginSonarJs.configs.recommended,
       ESLintJs.configs.recommended,
+      ESLintPluginStylistic.configs.recommended,
       // ESLintPluginTypescript.configs.recommendedTypeChecked,
       ...ESLintPluginTypescript.configs.strictTypeChecked,
       ...ESLintPluginTypescript.configs.stylisticTypeChecked,
       ESLintPluginUnicorn.configs.recommended,
-      ESLintConfigPrettier
+      ESLintConfigPrettier,
+      ESLintPluginDepend.configs['flat/recommended'],
+      ESLintPluginStylistic.configs['disable-legacy']
     ],
     plugins: {
       'n': ESLintPluginN,
+      '@stylistic': ESLintPluginStylistic,
       'prettier': ESLintPluginPrettier,
-      'unicorn': ESLintPluginUnicorn
+      'unicorn': ESLintPluginUnicorn,
+      'depend': ESLintPluginDepend.default
     },
     rules: {
       'array-bracket-spacing': ['error', 'never'],
@@ -35,8 +41,15 @@ export default defineConfig([
       'eol-last': 'error',
       'eqeqeq': ['error', 'smart'],
       'max-depth': ['warn', 3],
-      'max-len': ['warn', 80],
-      'max-statements': ['warn', 15],
+      '@stylistic/max-len': ['warn', {
+        code: 80,
+        // 'ignoreComments': true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true
+      }],
+      'max-statements': ['warn', 20],
       'new-cap': 'warn',
       'no-extend-native': 'error',
       'no-mixed-spaces-and-tabs': 'error',
@@ -46,12 +59,14 @@ export default defineConfig([
       'object-curly-spacing': ['error', 'always'],
       'quotes': ['error', 'single', 'avoid-escape'],
       'semi': ['error', 'always'],
-      'keyword-spacing': ['error', { 'before': true, 'after': true }],
+      'keyword-spacing': ['error', { before: true, after: true }],
       'space-unary-ops': 'error',
+      'unicorn/max-nested-calls': ['warn', { max: 4 }],
       'unicorn/no-typeof-undefined': 'off',
       'unicorn/no-this-assignment': 'off',
       '@typescript-eslint/no-this-alias': 'off',
-      'sonarjs/no-alphabetical-sort': 'off'
+      'sonarjs/no-alphabetical-sort': 'off',
+      'sonarjs/todo-tag': 'warn'
     },
     languageOptions: {
       ecmaVersion: 2022,
@@ -77,10 +92,10 @@ export default defineConfig([
     ],
     plugins: {
       n: ESLintPluginN,
-      tsdoc: (ESLintPluginTSDoc as ESLint.Plugin),
+      '@stylistic': ESLintPluginStylistic,
+      tsdoc: ESLintPluginTSDoc,
       prettier: ESLintPluginPrettier,
       unicorn: ESLintPluginUnicorn
-
     },
     rules: {
       'no-unused-vars': 'off',
@@ -91,23 +106,25 @@ export default defineConfig([
       }],
       'n/no-missing-import': ['error', {
         'ignoreTypeImport': true
-      }]
+      }],
+      'unicorn/no-array-sort': 'off',
+      'unicorn/require-array-sort-compare': 'off',
+      'unicorn/no-array-callback-reference': 'off',
+      'unicorn/no-this-outside-of-class': 'off'
     },
   },
   {
-    files: ['test/**/*.test.ts'],
+    files: ['test/**/*.ts'],
     plugins: {
       n: ESLintPluginN,
+      '@stylistic': ESLintPluginStylistic,
       prettier: ESLintPluginPrettier
     },
     rules: {
-      'max-statements': 'off'
+      'max-statements': 'off',
+      'unicorn/filename-case': 'off'
     },
     settings: {
     },
-    languageOptions: {
-      globals: {
-      },
-    }
   },
 ]);

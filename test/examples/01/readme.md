@@ -1,6 +1,6 @@
 # Updating relative paths for code
 
-When `processor.data().filePathChanges` is set,
+When `processor.data().filePathChanges` is set,
 this plugin adjusts all relative paths
 for code
 to ensure they are accurate.
@@ -26,6 +26,7 @@ export async function remarkDirectiveUsingExample(
     .use(remarkRelativeCodePathsAdjustment)
     .process(await vFile.read(filePath));
 };
+
 ```
 
 Source files:
@@ -72,6 +73,7 @@ import remarkDirective from 'remark-directive';
 import { remarkInclude } from '@it-service-npm/remark-include';
 import type { VFile } from 'vfile';
 ```
+
 ````
 
 Remark output:
@@ -116,4 +118,5 @@ import remarkDirective from 'remark-directive';
 import { remarkInclude } from '@it-service-npm/remark-include';
 import type { VFile } from 'vfile';
 ```
+
 ````

@@ -1,6 +1,6 @@
-# Updating relative paths for code without `sourcePath`
+# Updating relative paths for code without `sourcePath`
 
-When `processor.data().filePathChanges.sourcePath` does not set,
+When `processor.data().filePathChanges.sourcePath` does not set,
 `file.path` used.
 
 ```typescript file=./example.ts
@@ -23,6 +23,7 @@ export async function remarkDirectiveUsingExample(
     .use(remarkRelativeCodePathsAdjustment)
     .process(await vFile.read(filePath));
 };
+
 ```
 
 Source files:
@@ -69,6 +70,7 @@ import remarkDirective from 'remark-directive';
 import { remarkInclude } from '@it-service-npm/remark-include';
 import type { VFile } from 'vfile';
 ```
+
 ````
 
 Remark output:
@@ -113,4 +115,5 @@ import remarkDirective from 'remark-directive';
 import { remarkInclude } from '@it-service-npm/remark-include';
 import type { VFile } from 'vfile';
 ```
+
 ````

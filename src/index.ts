@@ -82,7 +82,6 @@ export function remarkRelativeCodePathsAdjustment(
           if (typeof fileMeta === 'undefined') {
             return;
           };
-          // eslint-disable-next-line max-len
           const fileAttributeRegExp = /^file=(?<path>.+?)(?:(?:#(?:L(?<from>\d+)(?:-)?)?)(?:L(?<to>\d+))?)?$/;
           const fileMetaStructure = fileAttributeRegExp.exec(fileMeta);
           if (fileMetaStructure?.groups?.path) {

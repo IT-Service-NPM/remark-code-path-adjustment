@@ -52,24 +52,22 @@
 
 [coverage-url]: https://coveralls.io/github/IT-Service-NPM/remark-code-path-adjustment?branch=main
 
-This Remark plugin helps to adjust code meta `file`,
+This Remark plugin helps to adjust code meta `file`,
 ensuring paths remain accurate even after file relocations or inclusions.
 
-When `processor.data().filePathChanges` is set,
+When `processor.data().filePathChanges` is set,
 this plugin adjusts all relative paths
 for code
 to ensure they are accurate.
 
 ## Contents
 
-- [@it-service-npm/remark-code-path-adjustment Remark plugin](#it-service-npmremark-code-path-adjustment-remark-plugin)
-  - [Contents](#contents)
-  - [Install](#install)
-  - [Examples](#examples)
-    - [Updating relative paths for code](#updating-relative-paths-forcode)
-    - [Updating relative paths for code without `sourcePath`](#updating-relative-paths-forcodewithout-sourcepath)
-  - [API](#api)
-  - [License](#license)
+- [Install](#install)
+- [Examples](#examples)
+  - [Updating relative paths for code](#updating-relative-paths-forcode)
+  - [Updating relative paths for code without `sourcePath`](#updating-relative-paths-forcodewithoutsourcepath)
+- [API](#api)
+- [License](#license)
 
 ## Install
 
@@ -81,7 +79,7 @@ npm install --save-dev @it-service-npm/remark-code-path-adjustment
 
 ### Updating relative paths for code
 
-When `processor.data().filePathChanges` is set,
+When `processor.data().filePathChanges` is set,
 this plugin adjusts all relative paths
 for code
 to ensure they are accurate.
@@ -202,9 +200,9 @@ import type { VFile } from 'vfile';
 
 ````
 
-### Updating relative paths for code without `sourcePath`
+### Updating relative paths for code without `sourcePath`
 
-When `processor.data().filePathChanges.sourcePath` does not set,
+When `processor.data().filePathChanges.sourcePath` does not set,
 `file.path` used.
 
 ```typescript file=test/examples/02/example.ts
@@ -324,8 +322,8 @@ import type { VFile } from 'vfile';
 
 ## API
 
-Please, read the [API reference](/docs/index.md).
+Please, read the [API reference](/docs/index.md).
 
 ## License
 
-[MIT](LICENSE) © [Sergei S. Betke](https://github.com/sergey-s-betke)
+[MIT](LICENSE) © [Sergei S. Betke](https://github.com/sergey-s-betke)
